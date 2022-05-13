@@ -21,23 +21,33 @@ for one_letter in random_word:
     hidden_word.append("_")
 #print(hidden_word)
 
+#životy
+lives = 6
 
 while "_" in hidden_word:
-    lives = 6
+    #lives = 6
     guess = input("Zadejte hádané písmeno: \n").lower()
     for index in range(0, len(random_word)):
         if guess == random_word[index].lower():
             hidden_word[index] = guess
+    #print(hidden_word)
+
+            #ŠPATNĚ
             #print(f"Zbývá Ti {lives} život/životů.")
         #else:
             #lives -= 1
             #print(f"Zbývá ti {lives} život/životů.")
-    if guess == random_word[index].lower():
-        print(f"Zbývá Ti {lives} život/životů.")
-    else:
-        lives -= 1
-        print(f"Zbývá ti {lives} život/životů.")
-    #print(hidden_word)
+    #ŠPATNĚ
+    #if guess == random_word[index].lower():
+        #print(f"Zbývá Ti {lives} život/životů.")
+    #else:
+        #lives -= 1
+        #print(f"Zbývá ti {lives} život/životů.")
+
+    
+
+
+
 
 
 # vypsání slova s podtržízky v normálmí podobě
@@ -45,6 +55,12 @@ while "_" in hidden_word:
     for one_letter in hidden_word:
         printed_word += one_letter
     print(printed_word)
+# kontrola životů
+    if guess not in random_word:
+        lives -= 1
+        print(f"Zbývá Ti {lives} život/životy/životů.")
+    else:
+        print(f"Zbývá Ti {lives} život/životy/životů.")
 
 # kontrola vítěství
 if "_" not in hidden_word:
