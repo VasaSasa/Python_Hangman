@@ -2,8 +2,6 @@
 # Generování náhodného slova
 import random
 
-from pkg_resources import load_entry_point
-
 words = ["harry", "roland", "albus", "hermiona", "tluosťoch"]
 while True:
     new_name = input("Zadej jmeno: ")
@@ -21,14 +19,24 @@ random_word = words[random.randint(0,len(words) - 1)]
 hidden_word = []
 for one_letter in random_word:
     hidden_word.append("_")
-print(hidden_word)
+#print(hidden_word)
 
 
 while "_" in hidden_word:
+    lives = 6
     guess = input("Zadejte hádané písmeno: \n").lower()
     for index in range(0, len(random_word)):
         if guess == random_word[index].lower():
             hidden_word[index] = guess
+            #print(f"Zbývá Ti {lives} život/životů.")
+        #else:
+            #lives -= 1
+            #print(f"Zbývá ti {lives} život/životů.")
+    if guess == random_word[index].lower():
+        print(f"Zbývá Ti {lives} život/životů.")
+    else:
+        lives -= 1
+        print(f"Zbývá ti {lives} život/životů.")
     #print(hidden_word)
 
 
