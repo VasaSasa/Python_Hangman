@@ -24,6 +24,7 @@ for one_letter in random_word:
 
 #životy
 lives = 6
+print(stages[lives])
 
 while "_" in hidden_word:
     #lives = 6
@@ -59,6 +60,7 @@ while "_" in hidden_word:
 # kontrola životů
     if guess not in random_word:
         lives -= 1
+        print(stages[lives])
         print(f"Zbývá Ti {lives} život/životy/životů.")
     else:
         print(f"Zbývá Ti {lives} život/životy/životů.")
