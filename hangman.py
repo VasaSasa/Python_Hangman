@@ -1,6 +1,7 @@
 # Hangman
 # Generování náhodného slova
 import random
+from hangman_2 import stages
 
 words = ["harry", "roland", "albus", "hermiona", "tluosťoch"]
 while True:
