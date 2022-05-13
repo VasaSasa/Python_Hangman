@@ -61,6 +61,10 @@ while "_" in hidden_word:
         print(f"Zbývá Ti {lives} život/životy/životů.")
     else:
         print(f"Zbývá Ti {lives} život/životy/životů.")
+# konec hry
+    if lives == 0:
+        print("Prohráli jste!!!")
+        break
 
 # kontrola vítěství
 if "_" not in hidden_word:
